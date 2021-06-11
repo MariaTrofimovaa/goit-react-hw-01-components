@@ -4,6 +4,8 @@ import StatList from "./statList/StatList";
 import styles from "./Profile.module.css";
 import defaultImage from "./default.svg";
 
+// const { nanoid } = require("nanoid");
+
 const Profile = ({ name, tag, location, avatar, stats }) => {
   return (
     <div className={styles.profile}>
