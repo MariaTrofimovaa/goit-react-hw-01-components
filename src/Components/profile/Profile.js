@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import StatList from "./statList/StatList";
 import styles from "./Profile.module.css";
+import defaultImage from "./default.svg";
 
 const Profile = ({ name, tag, location, avatar, stats }) => {
   return (
@@ -24,10 +25,19 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
   );
 };
 
+Profile.defaultProps = {
+  avatar: defaultImage,
+};
+
 Profile.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
 };
 export default Profile;
