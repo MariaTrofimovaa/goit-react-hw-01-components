@@ -4,7 +4,7 @@ import StatList from "./statList/StatList";
 import styles from "./Profile.module.css";
 import defaultImage from "./default.svg";
 
-// const { nanoid } = require("nanoid");
+const { nanoid } = require("nanoid");
 
 const Profile = ({ name, tag, location, avatar, stats }) => {
   return (
@@ -19,8 +19,8 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
       <ul className={styles.stats}>
         {Object.keys(stats)
           .map((key) => ({ [key]: stats[key] }))
-          .map((item, index) => (
-            <StatList key={index} item={item} />
+          .map((item, id = nanoid) => (
+            <StatList key={id} item={item} />
           ))}
       </ul>
     </div>
