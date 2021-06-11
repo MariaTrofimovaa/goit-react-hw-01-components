@@ -11,12 +11,16 @@ const StatList = ({ item }) => {
   );
 };
 
+// StatList.propTypes = {
+//   stats: PropTypes.shape({
+//     followers: PropTypes.number.isRequired,
+//     views: PropTypes.number.isRequired,
+//     likes: PropTypes.number.isRequired,
+//   }),
+// };
+
 StatList.propTypes = {
-  stats: PropTypes.shape({
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
-  }),
+  item: PropTypes.objectOf(PropTypes.number),
 };
 
 export default StatList;
